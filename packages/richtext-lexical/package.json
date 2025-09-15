@@ -5,7 +5,7 @@
   "homepage": "https://payloadcms.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/payloadcms/payload.git",
+    "url": "https://github.com/yiorgoss/payloadcms.git",
     "directory": "packages/richtext-lexical"
   },
   "license": "MIT",
