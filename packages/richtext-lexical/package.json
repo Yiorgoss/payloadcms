@@ -1,5 +1,5 @@
 {
-  "name": "@yjmak/richtext-lexical",
+  "name": "yjmak_payloadcms_richtext-lexical",
   "version": "3.55.1",
   "description": "The officially supported Lexical richtext adapter for Payload",
   "homepage": "https://payloadcms.com",
