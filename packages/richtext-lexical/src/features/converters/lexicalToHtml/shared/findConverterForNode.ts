@@ -94,16 +94,6 @@ export function findConverterForNode<
     }
   }
 
-  if (node.$) {
-    Object.entries(textState).forEach(([stateKey, stateValues]) => {
-      const stateValue = node.$ && (node.$[stateKey] as ColorStateKeys)
-
-      if (stateValue && stateValues[stateValue]) {
-        Object.assign(style, stateValues[stateValue].css)
-      }
-    })
-  }
-
   let providedCSSString: string = ''
   for (const key of Object.keys(style)) {
     // @ts-expect-error we're iterating over the keys of the object
@@ -117,26 +107,3 @@ export function findConverterForNode<
     providedStyleTag,
   }
 }
-
-const textState: TextStateFeatureProps['state'] = {
-  type: {},
-  background: {
-    ...defaultColors.background,
-  },
-  color: {
-    ...defaultColors.text,
-  },
-  fontWeight: {
-    Boldest: { css: { 'font-weight': '900' }, label: 'Boldest' },
-  },
-  size: {
-    xl: { css: { 'font-size': '96px' }, label: 'Extra Large' },
-    xs: { css: { 'font-size': 'var(--text-xs, 4px)' }, label: 'Extra Small' },
-  },
-}
-
-type ExtractAllColorKeys<T> = {
-  [P in keyof T]: T[P] extends StateValues ? keyof T[P] : never
-}[keyof T]
-
-type ColorStateKeys = ExtractAllColorKeys<typeof textState>
