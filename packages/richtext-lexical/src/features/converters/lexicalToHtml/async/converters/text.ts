@@ -5,7 +5,11 @@ import { NodeFormat } from '../../../../../lexical/utils/nodeFormat.js'
 import { defaultColors } from '../../../../textState/defaultColors.js'
 
 const textState = {
-  type: {},
+  type: {
+    cursive: { css: { 'font-family': 'var(--cursive, cursive)' }, label: 'cursive' },
+    sans: { css: { 'font-family': 'var(--sans, sans-serif)' }, label: 'sans-serif' },
+    serif: { css: { 'font-family': 'var(--serif, serif)' }, label: 'serif' },
+  },
   background: {
     ...defaultColors.background,
   },
@@ -13,11 +17,114 @@ const textState = {
     ...defaultColors.text,
   },
   fontWeight: {
-    Boldest: { css: { 'font-weight': '900' }, label: 'Boldest' },
+    black: { css: { 'font-weight': '900' }, label: 'black' },
+    bold: { css: { 'font-weight': '700' }, label: 'bold' },
+    extrabold: { css: { 'font-weight': '800' }, label: 'extrabold' },
+    extralight: { css: { 'font-weight': '200' }, label: 'extralight' },
+    light: { css: { 'font-weight': '300' }, label: 'light' },
+    medium: { css: { 'font-weight': '500' }, label: 'medium' },
+    normal: { css: { 'font-weight': '400' }, label: 'normal' },
+    semibold: { css: { 'font-weight': '600' }, label: 'semibold' },
+    thin: { css: { 'font-weight': '100' }, label: 'thin' },
   },
   size: {
-    xl: { css: { 'font-size': '96px' }, label: 'Extra Large' },
-    xs: { css: { 'font-size': 'var(--text-xs, 4px)' }, label: 'Extra Small' },
+    'text-2xl': {
+      css: {
+        'font-size': 'var(--text-2xl,24px)',
+        'line-height': 'var(--text-2xl--line-height, 1.2)',
+      },
+      label: 'text-2xl',
+    },
+    'text-3xl': {
+      css: {
+        'font-size': 'var(--text-3xl,30px)',
+        'line-height': 'var(--text-3xl--line-height,1.2 )',
+      },
+      label: 'text-3xl',
+    },
+    'text-4xl': {
+      css: {
+        'font-size': 'var(--text-4xl,36px)',
+        'line-height': 'var(--text-4xl--line-height, 1.2)',
+      },
+      label: 'text-4xl',
+    },
+    'text-5xl': {
+      css: {
+        'font-size': 'var(--text-5xl,48px)',
+        'line-height': 'var(--text-5xl--line-height, 1)',
+      },
+      label: 'text-5xl',
+    },
+    'text-6xl': {
+      css: {
+        'font-size': 'var(--text-6xl,60px)',
+        'line-height': 'var(--text-6xl--line-height, 1)',
+      },
+      label: 'text-6xl',
+    },
+    'text-7xl': {
+      css: {
+        'font-size': 'var(--text-7xl,72px)',
+        'line-height': 'var(--text-7xl--line-height,1 )',
+      },
+      label: 'text-7xl',
+    },
+    'text-8xl': {
+      css: {
+        'font-size': 'var(--text-8xl, 96px)',
+        'line-height': 'var(--text-8xl--line-height, 1)',
+      },
+      label: 'text-8xl',
+    },
+    'text-9xl': {
+      css: {
+        'font-size': 'var(--text-9xl, 128px)',
+        'line-height': 'var(--text-9xl--line-height, 1)',
+      },
+      label: 'text-9xl',
+    },
+    'text-base': {
+      css: {
+        'font-size': ' var(--text-base, 16px)',
+        'line-height': ' var(--text-base--line-height,1.5)',
+      },
+      label: 'text-base',
+    },
+    'text-lg': {
+      css: {
+        'font-size': 'var(--text-lg, 18px)',
+        'line-height': 'var(--text-lg--line-height,1.4)',
+      },
+      label: 'text-lg',
+    },
+    'text-sm': {
+      css: {
+        'font-size': ' var(--text-sm, 14px)',
+        'line-height': ' var(--text-sm--line-height, 1.6])',
+      },
+      label: 'text-sm',
+    },
+    'text-xl': {
+      css: {
+        'font-size': 'var(--text-xl, 20px)',
+        'line-height': 'var(--text-xl--line-height, 1.4)',
+      },
+      label: 'text-xl',
+    },
+    'text-xs': {
+      css: {
+        'font-size': ' var(--text-xs, 12px)',
+        'line-height': ' var(--text-xs--line-height,1.7)',
+      },
+      label: 'text-xs',
+    },
+  },
+  themeColors: {
+    background: { css: { color: 'var(--background, #3a383b)' }, label: 'background' },
+    foreground: { css: { color: 'var(--foreground, #bbb5bd)' }, label: 'foreground' },
+    primary: { css: { color: 'var(--primary, #531970)' }, label: 'primary' },
+    'secondary ': { css: { color: 'var(--secondary, #6155cf )' }, label: 'secondary ' },
   },
 }
 

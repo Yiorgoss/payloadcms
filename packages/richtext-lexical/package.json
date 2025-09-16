@@ -1,6 +1,6 @@
 {
   "name": "payload-richtext-fork",
-  "version": "3.55.2",
+  "version": "3.55.3",
   "description": "The officially supported Lexical richtext adapter for Payload",
   "homepage": "https://payloadcms.com",
   "repository": {
