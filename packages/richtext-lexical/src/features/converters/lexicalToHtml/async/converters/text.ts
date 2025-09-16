@@ -43,33 +43,34 @@ export const TextHTMLConverterAsync: HTMLConvertersAsync<SerializedTextNode> = {
         }
       })
     }
-
     let providedCSSString = ''
     for (const key of Object.keys(style)) {
       // @ts-expect-error we're iterating over the keys of the object
       providedCSSString += `${key}: ${style[key]};`
     }
 
+    text = `<span style="${providedCSSString}">${text}</span>`
+
     if (node.format & NodeFormat.IS_BOLD) {
-      text = `<strong style="${providedCSSString}">${text}</strong>`
+      text = `<strong ">${text}</strong>`
     }
     if (node.format & NodeFormat.IS_ITALIC) {
-      text = `<em style="${providedCSSString}>${text}</em>`
+      text = `<em >${text}</em>`
     }
     if (node.format & NodeFormat.IS_STRIKETHROUGH) {
-      text = `<span style="text-decoration: line-through;${providedCSSString}">${text}</span>`
+      text = `<span style="text-decoration: line-through;">${text}</span>`
     }
     if (node.format & NodeFormat.IS_UNDERLINE) {
-      text = `<span style="text-decoration: underline;${providedCSSString}">${text}</span>`
+      text = `<span style="text-decoration: underline;">${text}</span>`
     }
     if (node.format & NodeFormat.IS_CODE) {
-      text = `<code style="${providedCSSString}>${text}</code>`
+      text = `<code >${text}</code>`
     }
     if (node.format & NodeFormat.IS_SUBSCRIPT) {
-      text = `<sub style="${providedCSSString}>${text}</sub>`
+      text = `<sub >${text}</sub>`
     }
     if (node.format & NodeFormat.IS_SUPERSCRIPT) {
-      text = `<sup style="${providedCSSString}>${text}</sup>`
+      text = `<sup >${text}</sup>`
     }
 
     return text
